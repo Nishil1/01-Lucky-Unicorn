@@ -8,7 +8,7 @@ def yes_no(content):
         yes = ["yes", "y"]
 
         if question in no:
-            print("Show Instructions")
+            print(Instructions)
             return question
         elif question in yes:
             return question
@@ -31,4 +31,4 @@ def num_check(response):
 # Main routine starts here
 
 played_before = yes_no("Have you played this game before? ")
-already_played = num_check("How much would you play to spend? ")
+already_played = num_check("How much would you like to play with? ")
