@@ -36,24 +36,27 @@ def get_intitial_betting_amount(question):
 
 
 def start_game(input_string,initialBalance):
-    round =1;
+    round =0;
     currentBalance = initialBalance
 
     while True:
-        print("Round: ", round)
-        currentBalance = generate_random_token(initialBalance, currentBalance)
+
         if currentBalance < 1:
             break;
         response = input(input_string);
         if response == "":
             round= round + 1;
+            print("**************************"
+                  "********** Round:{} ********"
+                  "**************************".format(round))
+            currentBalance = generate_random_token(initialBalance, currentBalance)
         else:
             break;
 
 
 
-
-    print("Your final balance is {}.Thanks for playing!".format(currentBalance))
+    print("---------------------------- Results --------------------------------")
+    print("Your final balance is ${}. Thanks for playing!".format(currentBalance))
 
 
 
@@ -102,8 +105,14 @@ def generate_random_token(starting_balance,current_balance):
 
 
 # Main routine starts here
+print("*************************************"
+      "*** Welcome to Lucky Unicorn Game ***"
+      "*************************************")
 
 display_instructions("Have you played this game before? ")
+print("-----------------------------------"
+      "--------Lets get started-----------"
+      "-----------------------------------")
 amount = get_intitial_betting_amount("How much money would you like to bet? ")
 start_game("Press <enter> to start playing or 'xxx' to quit", amount)
 
