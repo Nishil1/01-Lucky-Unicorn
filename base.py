@@ -2,7 +2,7 @@ import random
 
 # This function asks the user whether they have played this game before
 def display_instructions(question):
-    Instructions = "You can bet an amount from 1-10 dollars, each game costs 1 dollar and a token" \
+    Instructions = "You can bet an amount from 1-10 dollars, each game costs 1 dollar and a token " \
                    "will be randomly generated where you could win nothing, 50 cents or 5 dollars."
     while True:
         response = input(question).lower()
@@ -34,7 +34,7 @@ def get_intitial_betting_amount(question):
         except ValueError:
             print("Please enter a whole integer")
 
-
+# This function  checks whether user balance hasnt gone below 1 and uses the generate random token function to generate a token.
 def start_game(input_string,initialBalance):
     round =0;
     currentBalance = initialBalance
@@ -64,7 +64,7 @@ def start_game(input_string,initialBalance):
 
 
 
-
+# Function generates a random token and is combined with the "start_game" function to make sure the user has enough money to play.
 def generate_random_token(starting_balance,current_balance):
 
     for item in range(0, 1):
@@ -108,12 +108,17 @@ def generate_random_token(starting_balance,current_balance):
 print("*************************************"
       "*** Welcome to Lucky Unicorn Game ***"
       "*************************************")
-
+print()
 display_instructions("Have you played this game before? ")
+print()
 print("-----------------------------------"
       "--------Lets get started-----------"
       "-----------------------------------")
+print()
+print()
 amount = get_intitial_betting_amount("How much money would you like to bet? ")
+print()
+print()
 start_game("Press <enter> to start playing or 'xxx' to quit", amount)
 
 
